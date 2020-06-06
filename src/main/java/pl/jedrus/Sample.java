@@ -8,4 +8,10 @@ public class Sample {
     }
 
 
+    public static void sampleEx() {
+        System.out.println("SimpleSample cosEx");
+        throw new RuntimeException();
+    }
+
+
 }

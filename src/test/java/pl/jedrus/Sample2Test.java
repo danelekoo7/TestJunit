@@ -2,7 +2,7 @@ package pl.jedrus;
 
 import org.junit.*;
 
-public class SampleTest {
+public class Sample2Test {
 
 
     @Test
