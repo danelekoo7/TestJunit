@@ -1,5 +1,9 @@
 package pl.jedrus;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 public class Calculator {
 
     public static void main(String[] args) {
@@ -27,5 +31,11 @@ public class Calculator {
 
     public static boolean compare(double a, double b) {
         return a == b;
+    }
+
+    public int eval(String s) throws ScriptException {
+        ScriptEngineManager mgr = new ScriptEngineManager();
+        ScriptEngine engine = mgr.getEngineByName("JavaScript");
+        return (int) engine.eval(s);
     }
 }

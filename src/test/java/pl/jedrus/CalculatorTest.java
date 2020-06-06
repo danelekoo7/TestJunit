@@ -2,10 +2,11 @@ package pl.jedrus;
 
 import org.junit.Test;
 
+import javax.script.ScriptException;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CalculatorTest {
 
@@ -58,6 +59,14 @@ public class CalculatorTest {
         assertFalse(Calculator.compare(2, 5));
     }
 
+
+
+    @Test
+    public void evaluatesExpression() throws ScriptException {
+        Calculator calculator = new Calculator();
+        int sum = calculator.eval("1+2+3");
+        assertEquals(6, sum);
+    }
 
 
 }
